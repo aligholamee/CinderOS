@@ -1,3 +1,4 @@
+#include "Headers/screen.h"
 cmain()
 {
 	char* vidmem = (char*)0xb8000;
