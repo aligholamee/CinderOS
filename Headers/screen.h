@@ -58,7 +58,15 @@ void scrollUp(uint8 lineNumber)
 		cursorY -= lineNumber;
 	}
 	updateCursor();
-	
-
 }
 	
+
+void checkNewLine()
+{
+	if(cursorY >= sh-1)
+	{
+		scrollUp(1);
+	}
+}
+
+
