@@ -108,7 +108,16 @@ void printChar(char c)
 	checkNewLine();
 	updateCursor();
 }
+	
+void print(string ch)							//Print an string
+{
+	uint16 i = 0;
+	for(i;i<strlength(ch);i++)
+	{
+		printch(ch[i]);							//Loop through string
+	}
+}
 
-
+#endif
 
 
