@@ -88,7 +88,27 @@ void printChar(char c)
 		case ('\r'):							// Start the line from beginning
 			cursorX = 0;
 			break;
+		case('\n'):								// Jump to the next line
+			cursorX = 0;
+			cursorY++;
+			break;
+		default:
+			vidmem [((cursorY * sw + cursorX)) * sd] = c;			//Print charachter c to the first byte
+			vidmem [((cursorY * sw + cursorX)) * sd + 1] = 0x0F;	//0x0F = White (Set character color to white)
+			cursorX++;
+			break;
 	}
+
+	if(cursorX >= sw)							//End of the screen width
+	{
+		cursorX = 0;
+		cursorY++;
+	}
+
+	checkNewLine();
+	updateCursor();
 }
+
+
 
 
