@@ -69,4 +69,26 @@ void checkNewLine()
 	}
 }
 
+void printChar(char c)
+{
+	string vidmem = (string)0xb8000;
+
+	switch(c)
+	{
+		case (0x08):							// 0x08 = Backspace
+			if(cursorX > 0)
+			{
+				cursorX--;
+				vidmem[(cursorY*sw + cursorX)*sd] = 0x00;			//Everything in that positions is deleted
+			}
+			break;
+		case (0x09):							// 0x09 = Tab
+			cursorX = (cursorX + 8) & ~(8 - 1);
+			break;
+		case ('\r'):							// Start the line from beginning
+			cursorX = 0;
+			break;
+	}
+}
+
 
