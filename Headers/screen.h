@@ -29,4 +29,14 @@ void updateCursor()
 }
 
 
+void clearScreen()
+{
+	clearLine(0,sh-1);
+	cursorX = 0;
+	cursorY = 0;
+	updateCursor();
+}
+
+
+
 	
