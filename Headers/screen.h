@@ -38,5 +38,27 @@ void clearScreen()
 }
 
 
+void scrollUp(uint8 lineNumber)
+{
+	string vidmem = (string)0xb8000;
+	uint16 i = 0;
 
+	for(i;i<sw*(sh-1)*sd;i++)
+	{
+		vidmem[i] = vidmem[i+sw+sd+lineNumber];
+	}
+	clearLine(sh-1-lineNumber,sh-1);
+	if((cursorY - lineNumber) < 0)
+	{
+		cursorX = 0;
+		cursorY = 0;
+	}
+	else
+	{
+		cursorY -= lineNumber;
+	}
+	updateCursor();
+	
+
+}
 	
