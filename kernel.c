@@ -1,8 +1,32 @@
 #include "Headers/screen.h"
+#include "Headers/string.h"
+
 cmain()
 {
-	char* vidmem = (char*)0xb8000;
-	vidmem[0] = 'A';
-	vidmem[1] = 0x07;
+	clearScreen();
+	print("Cinder is up...\nWhat can i do?");
+	while(1)
+	{
+		print("\nCINDER> ");
 
+		string ch = readStr();
+
+		if(strEql(ch,"cmd") || strEql(ch,"CMD"))
+		{
+			print("Cinder is up...\nWhat can i do?");
+		}
+
+		else if(strEql(ch,"clear") || strEql(ch,"CLEAR"))
+		{
+			clearScreen();
+		}
+
+		else
+		{
+			print("Wrong Command!\n");
+		}
+
+		print("\n");
+	}
+			
 }
