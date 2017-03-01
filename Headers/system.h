@@ -9,7 +9,7 @@ uint8 inportb(uint16 _port)
 	return rv;
 }
 
-void outportb(uint16 _port, uint _data)
+void outportb(uint16 _port, uint8 _data)
 {
 	__asm__ __volatile__ ("outb %1, %0" : : "dN" (_port), "a" (_data));
 }
