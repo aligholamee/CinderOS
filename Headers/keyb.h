@@ -73,6 +73,61 @@ string readStr()
 			            buffstr[i] = '0';
 			            i++;
 			            break;
+			    case 12:
+		                printch('-');
+		                buffstr[i] = '-';
+		                i++;
+		                break;
+		        case 13:
+		                printch('=');
+		                buffstr[i] = '=';
+		                i++;
+		                break;
+		        case 14:
+		                printch('\b');
+		                i--;
+		                buffstr[i] = 0;
+		                break;
+		        case 15:
+		                printch('\t');         
+		                buffstr[i] = '\t';
+		                i++;
+		                break;
+		        case 16:
+		                printch('q');
+		                buffstr[i] = 'q';
+		                i++;
+		                break;
+		        case 17:
+		                printch('w');
+		                buffstr[i] = 'w';
+		                i++;
+		                break;
+		        case 18:
+		                printch('e');
+		                buffstr[i] = 'e';
+		                i++;
+		                break;
+		        case 19:
+		                printch('r');
+		                buffstr[i] = 'r';
+		                i++;
+		                break;
+		        case 20:
+		                printch('t');
+		                buffstr[i] = 't';
+		                i++;
+		                break;
+		        case 21:
+		                printch('y');
+		                buffstr[i] = 'y';
+		                i++;
+		                break;
+		        case 22:
+		                printch('u');
+		                buffstr[i] = 'u';
+		                i++;
+		                break;
 
 			}
 		}
