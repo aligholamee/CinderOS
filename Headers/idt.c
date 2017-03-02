@@ -9,3 +9,12 @@ void set_idt_gate(int n, uint32 handler)
 	idt[n].flags = 0x8E;
 	idt.high_offset = high_16(handler);
 }
+
+void set_idt()
+{
+	/* Assign the address of the idt to the base variable in idt_reg */
+	idt_reg.base = (uint32) &idt;
+	idt_reg.limit = IDT_ENTRIES * sizeof(idt_gate_t) - 1;
+	__asm__ __volatile__("lidtl (%0)" : : "r" (&idt_reg));
+	
+}
