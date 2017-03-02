@@ -152,7 +152,7 @@ string readStr()
 		                printch('\n');
 		                buffstr[i] = '\n';
 		                i++;
-		                reading = 0;
+		                isReading = 0;
 		                break;
 		        case 29:
 		                printch('q');           		/* Left Control */
