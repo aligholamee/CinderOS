@@ -15,4 +15,10 @@ typedef unsigned long long uint64;
 
 typedef char* string;
 
+/* Simply AND the lower 16 bits with the 0xFFFF Mask */
+#define low_16(address) (uint16)((address) & 0xFFFF)
+
+/* Simply AND the higher 16 bits with the 0xFFFF Mask */
+#define high_16(address) (uint16)((address) >> 16) & 0xFFFF 
+
 #endif
