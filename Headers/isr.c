@@ -38,4 +38,7 @@ void isr_install()
 	set_idt_gate(29, (uint32)isr29);
 	set_idt_gate(30, (uint32)isr30);
 	set_idt_gate(31, (uint32)isr31);
+
+	/* Load with ASM */
+	set_idt();
 }
