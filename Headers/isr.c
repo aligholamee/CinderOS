@@ -205,3 +205,13 @@ void isr31()
     asm("hlt");
 }
 
+string exception_messages[] = {
+	"Division By Zero",
+    "Debug",
+    "Non Maskable Interrupt",
+    "Breakpoint",
+    "Into Detected Overflow",
+    "Out of Bounds",
+    "Invalid Opcode",
+    "No Coprocessor",
+}
