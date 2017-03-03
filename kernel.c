@@ -1,8 +1,12 @@
 #include "Headers/screen.h"
 #include "Headers/string.h"
+#include "Headers/isr.h"
+#include "Headers/idt.h"
+#include "keyb.h"
 
 cmain()
 {
+	isr_install();
 	clearScreen();
 	print("Cinder is up...\nWhat can i do?");
 	while(1)
