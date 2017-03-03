@@ -225,4 +225,17 @@ string exception_messages[] = {
     "Coprocessor Fault",
     "Alignment Check",
     "Machine Check",
-}
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved"
+};
