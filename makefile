@@ -1,15 +1,15 @@
 COMPILER = gcc
 LINKER = ld
 ASSEMBLER = nasm
-CFLAGS = -m32 -c --ffreestanding
+CFLAGS = -m32 -c --freestanding
 ASFLAGS = -f elf32
 LDFLAGS = -m elf_i386 -T src/link.ld
 EMUALATOR = qemu-system-i386
 EMUALATOR_FLAGS = -kernel
 
 
-SRCS = src/kernel.asm src/kernel.c src/idt.c src/isr.c src/screen.c src/string.c src/system.c src/util.c
-OBJS = Objects/cinder.o Objects/cinderc.o Objects/idt.o Objects/isr.o Objects/screen.o Objects/string.o Objects/system.o Objects/util.o
+SRCS = src/kernel.asm src/kernel.c src/idt.c src/isr.c src/screen.c src/string.c src/system.c src/util.c src/keyb.c
+OBJS = Objects/cinder.o Objects/cinderc.o Objects/idt.o Objects/isr.o Objects/screen.o Objects/string.o Objects/system.o Objects/util.o Objects/keyb.o
 OUTPUT = CinderOS/boot/kernel.bin
 
 run:link
@@ -34,8 +34,8 @@ Objects/cinderc.o:src/kernel.c
 Objects/idt.o:src/idt.c
 	$(COMPILER) $(CFLAGS) src/idt.c -o Objects/idt.o 
 
-Objects/kb.o:src/keyb.c
-	$(COMPILER) $(CFLAGS) src/kb.c -o Objects/keyb.o
+Objects/keyb.o:src/keyb.c
+	$(COMPILER) $(CFLAGS) src/keyb.c -o Objects/keyb.o
 
 Objects/isr.o:src/isr.c
 	$(COMPILER) $(CFLAGS) src/isr.c -o Objects/isr.o
@@ -50,7 +50,7 @@ Objects/system.o:src/system.c
 	$(COMPILER) $(CFLAGS) src/system.c -o Objects/system.o
 
 Objects/util.o:src/util.c
-$(COMPILER) $(CFLAGS) src/util.c -o Objects/util.o
+	$(COMPILER) $(CFLAGS) src/util.c -o Objects/util.o
 
 
 build:all
@@ -63,9 +63,8 @@ build:all
 	echo         multiboot /boot/kernel.bin >> CinderOS/boot/grub/grub.cfg
 	echo } >> CinderOS/boot/grub/grub.cfg
 
-grub-mkrescue -o CinderOS.iso CinderOS/
+	grub-mkrescue -o CinderOS.iso CinderOS/
 
 clear:
-	rm -f obj/*.o
+	rm -f Objects/*.o
 	rm -r -f CinderOS/
-	

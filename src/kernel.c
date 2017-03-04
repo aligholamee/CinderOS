@@ -4,7 +4,7 @@
 #include "../Headers/idt.h"
 #include "../Headers/keyb.h"
 
-cmain()
+int cmain()
 {
 	isr_install();
 	clearScreen();
@@ -32,5 +32,7 @@ cmain()
 
 		print("\n");
 	}
+
+	return 0;
 			
 }
