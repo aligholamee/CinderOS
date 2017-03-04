@@ -21,4 +21,33 @@ link:compile $(OBJS)
 	mkdir CinderOS/boot
 	$(LINKER) $(LDFLAGS) -o $(OUTPUT) $(OBJS)
 
+compile:$(SRCS)
+	rm Objects/ -r -f
+	mkdir Objects/
+
+Objects/cinder.o:src/kernel.asm
+	$(ASSEMBLER) $(ASFLAGS) -o Objects/cinder.o src/kernel.asm
+
+Objects/cinderc.o:src/kernel.c
+	$(COMPILER) $(CFLAGS) src/kernel.c -o Objects/cinderc.o 
 	
+Objects/idt.o:src/idt.c
+	$(COMPILER) $(CFLAGS) src/idt.c -o Objects/idt.o 
+
+Objects/kb.o:src/keyb.c
+	$(COMPILER) $(CFLAGS) src/kb.c -o Objects/keyb.o
+
+Objects/isr.o:src/isr.c
+	$(COMPILER) $(CFLAGS) src/isr.c -o Objects/isr.o
+
+Objects/screen.o:src/screen.c
+	$(COMPILER) $(CFLAGS) src/screen.c -o Objects/screen.o
+
+Objects/string.o:src/string.c
+	$(COMPILER) $(CFLAGS) src/string.c -o Objects/string.o
+
+Objects/system.o:src/system.c
+	$(COMPILER) $(CFLAGS) src/system.c -o Objects/system.o
+
+Objects/util.o:src/util.c
+$(COMPILER) $(CFLAGS) src/util.c -o Objects/util.o
