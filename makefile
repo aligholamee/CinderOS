@@ -51,3 +51,16 @@ Objects/system.o:src/system.c
 
 Objects/util.o:src/util.c
 $(COMPILER) $(CFLAGS) src/util.c -o Objects/util.o
+
+
+build:all
+	rm CinderOS/boot/grub/ -r -f
+	mkdir CinderOS/boot/grub/
+	echo set default=0 >> CinderOS/boot/grub/grub.cfg
+	echo set timeout=0 >> CinderOS/boot/grub/grub.cfg
+	echo menuentry "CinderOS" { >> CinderOS/boot/grub/grub.cfg
+	echo         set root='(hd96)' >> CinderOS/boot/grub/grub.cfg
+	echo         multiboot /boot/kernel.bin >> CinderOS/boot/grub/grub.cfg
+	echo } >> CinderOS/boot/grub/grub.cfg
+
+grub-mkrescue -o CinderOS.iso CinderOS/
