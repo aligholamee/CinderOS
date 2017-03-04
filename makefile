@@ -64,3 +64,8 @@ build:all
 	echo } >> CinderOS/boot/grub/grub.cfg
 
 grub-mkrescue -o CinderOS.iso CinderOS/
+
+clear:
+	rm -f obj/*.o
+	rm -r -f CinderOS/
+	
