@@ -19,283 +19,283 @@ string readStr()
 			switch(inportb(0x60))
 			{
 			    case 2:
-			            printch('1');
+			            printChar('1');
 			            buffstr[i] = '1';
 			            i++;
 			            break;
 			    case 3:
-			            printch('2');
+			            printChar('2');
 			            buffstr[i] = '2';
 			            i++;
 			            break;
 			    case 4:
-			            printch('3');
+			            printChar('3');
 			            buffstr[i] = '3';
 			            i++;
 			            break;
 			    case 5:
-			            printch('4');
+			            printChar('4');
 			            buffstr[i] = '4';
 			            i++;
 			            break;
 			    case 6:
-			            printch('5');
+			            printChar('5');
 			            buffstr[i] = '5';
 			            i++;
 			            break;
 			    case 7:
-			            printch('6');
+			            printChar('6');
 			            buffstr[i] = '6';
 			            i++;
 			            break;
 			    case 8:
-			            printch('7');
+			            printChar('7');
 			            buffstr[i] = '7';
 			            i++;
 			            break;
 			    case 9:
-			            printch('8');
+			            printChar('8');
 			            buffstr[i] = '8';
 			            i++;
 			            break;
 			    case 10:
-			            printch('9');
+			            printChar('9');
 			            buffstr[i] = '9';
 			            i++;
 			            break;
 			    case 11:
-			            printch('0');
+			            printChar('0');
 			            buffstr[i] = '0';
 			            i++;
 			            break;
 			    case 12:
-		                printch('-');
+		                printChar('-');
 		                buffstr[i] = '-';
 		                i++;
 		                break;
 		        case 13:
-		                printch('=');
+		                printChar('=');
 		                buffstr[i] = '=';
 		                i++;
 		                break;
 		        case 14:
-		                printch('\b');
+		                printChar('\b');
 		                i--;
 		                buffstr[i] = 0;
 		                break;
 		        case 15:
-		                printch('\t');         
+		                printChar('\t');         
 		                buffstr[i] = '\t';
 		                i++;
 		                break;
 		        case 16:
-		                printch('q');
+		                printChar('q');
 		                buffstr[i] = 'q';
 		                i++;
 		                break;
 		        case 17:
-		                printch('w');
+		                printChar('w');
 		                buffstr[i] = 'w';
 		                i++;
 		                break;
 		        case 18:
-		                printch('e');
+		                printChar('e');
 		                buffstr[i] = 'e';
 		                i++;
 		                break;
 		        case 19:
-		                printch('r');
+		                printChar('r');
 		                buffstr[i] = 'r';
 		                i++;
 		                break;
 		        case 20:
-		                printch('t');
+		                printChar('t');
 		                buffstr[i] = 't';
 		                i++;
 		                break;
 		        case 21:
-		                printch('y');
+		                printChar('y');
 		                buffstr[i] = 'y';
 		                i++;
 		                break;
 		        case 22:
-		                printch('u');
+		                printChar('u');
 		                buffstr[i] = 'u';
 		                i++;
 		                break;
 		        case 23:
-		                printch('i');
+		                printChar('i');
 		                buffstr[i] = 'i';
 		                i++;
 		                break;
 		        case 24:
-		                printch('o');
+		                printChar('o');
 		                buffstr[i] = 'o';
 		                i++;
 		                break;
 		        case 25:
-		                printch('p');
+		                printChar('p');
 		                buffstr[i] = 'p';
 		                i++;
 		                break;
 		        case 26:
-		                printch('[');
+		                printChar('[');
 		                buffstr[i] = '[';
 		                i++;
 		                break;
 		        case 27:
-		                printch(']');
+		                printChar(']');
 		                buffstr[i] = ']';
 		                i++;
 		                break;
 		        case 28:
-		                printch('\n');
+		                printChar('\n');
 		                buffstr[i] = '\n';
 		                i++;
 		                isReading = 0;
 		                break;
 		        case 29:
-		                printch('q');           		/* Left Control */
+		                printChar('q');           		/* Left Control */
 		                buffstr[i] = 'q';
 		                i++;
 		                break;
 		        case 30:
-		                printch('a');
+		                printChar('a');
 		                buffstr[i] = 'a';
 		                i++;
 		                break;
 		        case 31:
-		                printch('s');
+		                printChar('s');
 		                buffstr[i] = 's';
 		                i++;
 		                break;
 		        case 32:
-		                printch('d');
+		                printChar('d');
 		                buffstr[i] = 'd';
 		                i++;
 		                break;
 		        case 33:
-		                printch('f');
+		                printChar('f');
 		                buffstr[i] = 'f';
 		                i++;
 		                break;
 		        case 34:
-		                printch('g');
+		                printChar('g');
 		                buffstr[i] = 'g';
 		                i++;
 		                break;
 		        case 35:
-		                printch('h');
+		                printChar('h');
 		                buffstr[i] = 'h';
 		                i++;
 		                break;
 		        case 36:
-		                printch('j');
+		                printChar('j');
 		                buffstr[i] = 'j';
 		                i++;
 		                break;
 		        case 37:
-		                printch('k');
+		                printChar('k');
 		                buffstr[i] = 'k';
 		                i++;
 		                break;
 		        case 38:
-		                printch('l');
+		                printChar('l');
 		                buffstr[i] = 'l';
 		                i++;
 		                break;
 		        case 39:
-		                printch(';');
+		                printChar(';');
 		                buffstr[i] = ';';
 		                i++;
 		                break;
 		        case 40:
-		                printch((char)44);               /*   Single quote (') */
+		                printChar((char)44);               /*   Single quote (') */
 		                buffstr[i] = (char)44;
 		                i++;
 		                break;
 		        case 41:
-		                printch((char)44);               /* Back tick (`) */
+		                printChar((char)44);               /* Back tick (`) */
 		                buffstr[i] = (char)44;
 		                i++;
 		                break;
 		        case 42:                                 /* Left shift */
-		                printch('q');
+		                printChar('q');
 		                buffstr[i] = 'q';
 		                i++;
 		                break;
 		        case 43:                                 /* (< for somekeyboards)   */
-		                printch((char)92);
+		                printChar((char)92);
 		                buffstr[i] = 'q';
 		                i++;
 		                break;
 		        case 44:
-		                printch('z');
+		                printChar('z');
 		                buffstr[i] = 'z';
 		                i++;
 		                break;
 		        case 45:
-		                printch('x');
+		                printChar('x');
 		                buffstr[i] = 'x';
 		                i++;
 		                break;
 		        case 46:
-		                printch('c');
+		                printChar('c');
 		                buffstr[i] = 'c';
 		                i++;
 		                break;
 		        case 47:
-		                printch('v');
+		                printChar('v');
 		                buffstr[i] = 'v';
 		                i++;
 		                break;                
 		        case 48:
-		                printch('b');
+		                printChar('b');
 		                buffstr[i] = 'b';
 		                i++;
 		                break;               
 		        case 49:
-		                printch('n');
+		                printChar('n');
 		                buffstr[i] = 'n';
 		                i++;
 		                break;                
 		        case 50:
-		                printch('m');
+		                printChar('m');
 		                buffstr[i] = 'm';
 		                i++;
 		                break;               
 		        case 51:
-		                printch(',');
+		                printChar(',');
 		                buffstr[i] = ',';
 		                i++;
 		                break;                
 		        case 52:
-		                printch('.');
+		                printChar('.');
 		                buffstr[i] = '.';
 		                i++;
 		                break;            
 		        case 53:
-		                printch('/');
+		                printChar('/');
 		                buffstr[i] = '/';
 		                i++;
 		                break;            
 		        case 54:
-		                printch('.');
+		                printChar('.');
 		                buffstr[i] = '.';
 		                i++;
 		                break;            
 		        case 55:
-		                printch('/');
+		                printChar('/');
 		                buffstr[i] = '/';
 		                i++;
 		                break;            
 		        case 56:
-		                printch(' ');          			 /* Right shift */
+		                printChar(' ');          			 /* Right shift */
 		                buffstr[i] = ' ';
 		                i++;
 		                break;           
 		        case 57:
-		                printch(' ');
+		                printChar(' ');
 		                buffstr[i] = ' ';
 		                i++;
 		                break;

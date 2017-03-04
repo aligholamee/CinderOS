@@ -112,7 +112,7 @@ void print(string ch)									/* Print an string */
 	uint8 length = strlength(ch)-1;
 	for(i;i<length;i++)
 	{
-		printch(ch[i]);							        /* Loop through string */
+		printChar(ch[i]);							        /* Loop through string */
 	}
 }
 
