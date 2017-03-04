@@ -1,7 +1,7 @@
-#include "isr.h"
-#include "idt.h"
-#include "screen.h"
-#include "util.h"
+#include "../Headers/isr.h"
+#include "../Headers/idt.h"
+#include "../Headers/screen.h"
+#include "../Headers/util.h"
 
 void isr_install()
 {

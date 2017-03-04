@@ -1,4 +1,4 @@
-#include "screen.h"
+#include "../Headers/screen.h"
 
 int cursorX = 0, cursorY = 0;
 const uint8 sw = 80, sh = 25, sd = 2;							/* sw = screen width, height, depth, sd=2 => color,char */

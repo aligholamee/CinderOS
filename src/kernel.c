@@ -1,8 +1,8 @@
-#include "Headers/screen.h"
-#include "Headers/string.h"
-#include "Headers/isr.h"
-#include "Headers/idt.h"
-#include "Headers/keyb.h"
+#include "../Headers/screen.h"
+#include "../Headers/string.h"
+#include "../Headers/isr.h"
+#include "../Headers/idt.h"
+#include "../Headers/keyb.h"
 
 cmain()
 {
