@@ -71,7 +71,7 @@ void fill_array(int arr[],int n)
 	}
 }
 
-void sum_array(int arr[],int n)
+int sum_array(int arr[],int n)
 {
 	int i = 0;
 	int sum = 0;
@@ -80,3 +80,4 @@ void sum_array(int arr[],int n)
 		sum += arr[i];
 	return sum;
 }
+
