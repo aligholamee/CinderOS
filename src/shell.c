@@ -44,6 +44,7 @@ void start_shell(int n)
 	}while(!strEql(ch,"exit"));
 }
 
+/* Simply start the summation procedure */
 void sum()
 {
 	print("\nHow many numbers: ");
@@ -58,6 +59,7 @@ void sum()
 	print("\n");
 }
 
+/* Simply fill the array with the user input :| */
 void fill_array(int arr[],int n)
 {
 	int i = 0;
@@ -71,6 +73,7 @@ void fill_array(int arr[],int n)
 	}
 }
 
+/* Simply find the summation of the array elements :| */ 
 int sum_array(int arr[],int n)
 {
 	int i = 0;
@@ -81,6 +84,7 @@ int sum_array(int arr[],int n)
 	return sum;
 }
 
+/* Simply print the user input to the user :| */
 void echo()
 {
 	print("\n");
@@ -90,3 +94,20 @@ void echo()
 	print("\n");
 }
 
+void sort()
+{
+	int arr[100];
+	print("\nArray size please: ");
+	int n = stringToInt(readStr());
+	print("\n");
+	fill_array(arr,n);
+	print("Before Sorting: \n");
+	print_array(arr,n);
+
+	print("\nWhat order you want to sort?(1 for increasing / 0 for decreasing): ");
+	int order = stringToInt(readStr());
+	insertion_sort(arr,n,order);
+
+	print("\nAfter Sorting: \n");
+	print_array(arr,n);
+}
