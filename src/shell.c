@@ -81,3 +81,12 @@ int sum_array(int arr[],int n)
 	return sum;
 }
 
+void echo()
+{
+	print("\n");
+	string str = readStr();
+	print("\n");
+	print(str);
+	print("\n");
+}
+
