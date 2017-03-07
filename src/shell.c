@@ -129,3 +129,27 @@ void insertion_sort(int arr[], int n, int order)
 		arr[j] = aux;
 	}
 }
+
+void fibonacci()
+{
+	print("\nHow many Elements: ");
+	int n = stringToInt(readStr());
+	print("\n");
+	int i = 0;
+	for(i = 0;i < n;i++)
+	{
+		print("Fibo ");
+		print(intToString(i));
+		print(" : ");
+		print(intToString(fibo(i)));
+		print("\n");
+	}
+}
+
+int fibo(int n)
+{
+	if(n<2)
+		return 1;
+	else
+		return fibo(n-1) + fibo(n-2);
+}
