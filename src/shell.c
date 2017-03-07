@@ -57,3 +57,16 @@ void sum()
 	print(intToString(s));
 	print("\n");
 }
+
+void fill_array(int arr[],int n)
+{
+	int i = 0;
+	for(i = 0;i < n;i++)
+	{
+		print("ARR[");
+		print(intToString(i));
+		print("]: ");
+		arr[i] = stringToInt(readStr());
+		print("\n");
+	}
+}
