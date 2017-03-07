@@ -94,6 +94,7 @@ void echo()
 	print("\n");
 }
 
+/* Calling the insertion sort algorithm from here :| */
 void sort()
 {
 	int arr[100];
@@ -110,4 +111,21 @@ void sort()
 
 	print("\nAfter Sorting: \n");
 	print_array(arr,n);
+}
+
+/* Simple insertion sort found on the web :| */
+void insertion_sort(int arr[], int n, int order)
+{
+	int i = 0
+	for( i =1; i < n;i++)
+	{
+		int aux = arr[i];
+		int j = i;
+		while((j > 0) && ((aux < arr[j-1]) && order))
+		{
+			arr[j] = arr[j-1];
+			j = j - 1;
+		}
+		arr[j] = aux;
+	}
 }
