@@ -179,3 +179,14 @@ void gcd()
 	print(intToString(matrix[n-1][0]));
 	print("\n");
 }
+
+
+int gcd_couple(int a,int b)
+{
+	if(b == 0)
+		return 1;
+	if(a % b ==0) 
+		return b;
+	else 
+		return gcd_couple(b,a % b);
+}
