@@ -190,3 +190,11 @@ int gcd_couple(int a,int b)
 	else 
 		return gcd_couple(b,a % b);
 }
+
+void print_matrix(int matrix[][100],int rows,int cols)
+{
+	int i = 0;
+	int j = 0;
+	
+
+}
