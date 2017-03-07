@@ -153,3 +153,29 @@ int fibo(int n)
 	else
 		return fibo(n-1) + fibo(n-2);
 }
+
+void gcd()
+{
+	print("\nHow many numbers: ");
+	int n = stringToInt(readStr());
+	int i =0;
+	print("\n");
+	int arr[n];
+	int matrix[n][n];
+	fill_array(arr,n);
+	for (i = 0;i<n;i++)
+	{
+		matrix[0][i] = arr[i];
+	}
+	int j = 0;
+	for (i =1;i<n;i++)
+	{
+		for (j=0;j<n-1;j++)
+		{
+			matrix[i][j] = gcd_couple(matrix[i-1][j] , matrix[i-1][j+1]);
+		}
+	}
+	print("Result: ");
+	print(intToString(matrix[n-1][0]));
+	print("\n");
+}
