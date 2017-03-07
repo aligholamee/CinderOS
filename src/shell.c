@@ -43,3 +43,17 @@ void start_shell(int n)
 	 	}
 	}while(!strEql(ch,"exit"));
 }
+
+void sum()
+{
+	print("\nHow many numbers: ");
+	int n = stringToInt(readStr());
+	int i = 0;
+	print("\n");
+	int arr[n];
+	fill_array(arr,n);
+	int s = sum_array(arr,n);
+	print("Result: ");
+	print(intToString(s));
+	print("\n");
+}
