@@ -204,3 +204,35 @@ void print_matrix(int matrix[][100],int rows,int cols)
 	print("\n");
 
 }
+
+
+void setBackgroundColor()
+{
+	print("\nColor codes : ");
+	print("\n0 : black");
+
+	/* Following function is defined in screen.h */
+	print_colored("\n1 : blue",1,0);   
+	print_colored("\n2 : green",2,0);
+	print_colored("\n3 : cyan",3,0);
+	print_colored("\n4 : red",4,0);
+	print_colored("\n5 : purple",5,0);
+	print_colored("\n6 : orange",6,0);
+	print_colored("\n7 : grey",7,0);
+	print_colored("\n8 : dark grey",8,0);
+	print_colored("\n9 : blue light",9,0);
+	print_colored("\n10 : green light",10,0);
+	print_colored("\n11 : blue lighter",11,0);
+	print_colored("\n12 : red light",12,0);
+	print_colored("\n13 : rose",13,0);
+	print_colored("\n14 : yellow",14,0);
+	print_colored("\n15 : white",15,0);
+	
+	print("\n\n Text color ? : ");
+	int text_color = str_to_int(readStr());
+	print("\n\n Background color ? : ");
+	int bg_color = str_to_int(readStr());
+	set_screen_color(text_color,bg_color);
+	clearScreen();
+
+}
