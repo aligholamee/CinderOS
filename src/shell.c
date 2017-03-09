@@ -35,7 +35,7 @@ void start_shell(int n)
 	 	else if(strEql(ch,"help"))
 	 		help();
 	 	else if(strEql(ch,"color"))
-	 		setColor();
+	 		setBackgroundColor();
 	 	else
 	 	{
 	 		print("\nWTF?!\n");
