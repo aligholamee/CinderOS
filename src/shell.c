@@ -252,3 +252,15 @@ void help()
 	
 	print("\n\n");
 }
+
+void multiply()
+{
+	print("\nNum 1 :");
+	int num1 = stringToInt(readStr());
+	print("\nNum 2 :");
+	int num2 = stringToInt(readStr());
+	print("\nResult : ");
+	/* Following function is defined in util.h */
+	print(intToString(num1*num2));
+	print("\n");
+}
