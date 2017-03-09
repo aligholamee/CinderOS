@@ -116,3 +116,21 @@ void print(string ch)									/* Print an string */
 	}
 }
 
+
+void set_screen_color(int text_color,int bg_color)
+{
+	color =  (bg_color << 4) | text_color;;
+}
+
+void set_screen_color_from_color_code(int color_code)
+{
+	color = color_code;
+}
+
+void print_colored(string ch,int text_color,int bg_color)
+{
+	int current_color = color;
+	set_screen_color(text_color,bg_color);
+	print(ch);
+	set_screen_color_from_color_code(current_color);
+}
