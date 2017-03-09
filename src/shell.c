@@ -28,7 +28,7 @@ void start_shell(int n)
 	 		echo();
 	 	else if(strEql(ch,"sort"))
 	 		sort();
-	 	else if(strEql(ch,"fibonacci")
+	 	else if(strEql(ch,"fibonacci"))
 	 		fibonacci();
 	 	else if(strEql(ch,"gcd"))
 	 		gcd();
@@ -41,7 +41,8 @@ void start_shell(int n)
 	 		print("\nWTF?!\n");
 	 		print("CINDER> ");
 	 	}
-	}while(!strEql(ch,"exit"));
+
+	} while(!strEql(ch,"exit"));
 }
 
 /* Simply start the summation procedure */
@@ -116,8 +117,8 @@ void sort()
 /* Simple insertion sort found on the web :| */
 void insertion_sort(int arr[], int n, int order)
 {
-	int i = 0
-	for( i =1; i < n;i++)
+	int i = 0;
+	for(i = 1;i < n;i++)
 	{
 		int aux = arr[i];
 		int j = i;
