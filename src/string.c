@@ -2,9 +2,9 @@
 
 uint16 strlength(string ch)
 {
-	uint16 i = 1;
+	uint16 i = 0;
 	while(ch[i++]);
-	return --i;
+	return i-1;
 }
 
 uint8 strEql(string ch1,string ch2)
