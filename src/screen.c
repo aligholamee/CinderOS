@@ -2,7 +2,7 @@
 
 int cursorX = 0, cursorY = 0;
 const uint8 sw = 80, sh = 25, sd = 2;							/* sw = screen width, height, depth, sd=2 => color,char */
-
+int color = 0x0F;
 void clearLine(uint8 line_s, uint8 line_e)						/* Delete lines from line_s to line_e */
 {
 	uint16 i = sw * line_s * sd;			
