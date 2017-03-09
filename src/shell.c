@@ -191,10 +191,16 @@ int gcd_couple(int a,int b)
 		return gcd_couple(b,a % b);
 }
 
+/* Matrix printing function for debugging purposes */
 void print_matrix(int matrix[][100],int rows,int cols)
 {
 	int i = 0;
 	int j = 0;
-	
+	for(i = 0; i < rows;i++)
+	{
+		print(intToString(matrix[i][j]));
+		print(" ");
+	}
+	print("\n");
 
 }
