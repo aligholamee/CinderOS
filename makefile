@@ -14,7 +14,7 @@ OUTPUT = CinderOS/boot/kernel.bin
 run:all
 	$(EMUALATOR) $(EMUALATOR_FLAGS) $(OUTPUT)
 
-link:$(OBJS)
+all:$(OBJS)
 	mkdir CinderOS/ -p
 	mkdir CinderOS/boot -p
 	$(LINKER) $(LDFLAGS) -o $(OUTPUT) $(OBJS)
