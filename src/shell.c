@@ -85,6 +85,21 @@ int sum_array(int arr[],int n)
 	return sum;
 }
 
+
+void print_array(int arr[],int n)
+{
+	int i = 0;
+	for (i = 0;i<n;i++)
+	{
+		print("ARR[");
+		print(intToString(i));
+		print("]: ");
+		print(intToString(arr[i]));
+		print("   ");
+	}
+	print("\n");
+}
+
 /* Simply print the user input to the user :| */
 void echo()
 {
