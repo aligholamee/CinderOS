@@ -38,3 +38,21 @@ void int_to_ascii(int n, char str[])
 	/* Reverse str */
 }
 
+
+string intToString(int n)
+{
+	string ch = malloc(50);
+	int_to_ascii(n,ch);
+	int len = strlength(ch);
+	int i = 0;
+	int j = len - 1;
+	while(i<(len/2 + len%2))
+	{
+		char tmp = ch[i];
+		ch[i] = ch[j];
+		ch[j] = tmp;
+		i++;
+		j--;
+	}
+	return ch;
+}
