@@ -229,10 +229,26 @@ void setBackgroundColor()
 	print_colored("\n15 : white",15,0);
 	
 	print("\n\n Text color ? : ");
-	int text_color = str_to_int(readStr());
+	int text_color = stringToInt(readStr());
 	print("\n\n Background color ? : ");
-	int bg_color = str_to_int(readStr());
-	set_screen_color(text_color,bg_color);
+	int bg_color = stringToInt(readStr());
+	/* Following function is defined in screen.h */
+	setScreenColor(text_color,bg_color);
 	clearScreen();
 
+}
+
+void help()
+{
+	print("\ncmd       : Launch a new recursive Shell");
+	print("\nclear     : Clears the screen");
+	print("\nsum       : Computes the sum of n numbers");
+	print("\necho      : Reprint a given text");
+	print("\nsort      : Sorts a given n numbers");
+	print("\nfibonaci  : Prints the first n numbers of fibonaci");
+	print("\ngcd       : Computes the grand common divider of n given numbers");
+	print("\nexit      : Quits the current shell");
+	print("\ncolor     : Changes the colors of the terminal");
+	
+	print("\n\n");
 }
