@@ -8,22 +8,16 @@ EMUALATOR = qemu-system-i386
 EMUALATOR_FLAGS = -kernel
 
 
-SRCS = src/kernel.asm src/kernel.c src/idt.c src/isr.c src/screen.c src/string.c src/system.c src/util.c src/keyb.c src/shell.c
 OBJS = Objects/cinder.o Objects/cinderc.o Objects/idt.o Objects/isr.o Objects/screen.o Objects/string.o Objects/system.o Objects/util.o Objects/keyb.o Objects/shell.o
 OUTPUT = CinderOS/boot/kernel.bin
 
-run:link
+run:all
 	$(EMUALATOR) $(EMUALATOR_FLAGS) $(OUTPUT)
 
-link:compile $(OBJS)
-	rm -r -f CinderOS/
-	mkdir CinderOS/
-	mkdir CinderOS/boot
+link:$(OBJS)
+	mkdir CinderOS/ -p
+	mkdir CinderOS/boot -p
 	$(LINKER) $(LDFLAGS) -o $(OUTPUT) $(OBJS)
-
-compile:$(SRCS)
-	rm Objects/ -r -f
-	mkdir Objects/
 
 Objects/cinder.o:src/kernel.asm
 	$(ASSEMBLER) $(ASFLAGS) -o Objects/cinder.o src/kernel.asm
