@@ -9,7 +9,16 @@ void memory_copy(char *soruce, char *dest, int nbytes);
 /* Assigning a value to an specific address in the memory for len times */
 void memory_set(uint8 *dest, uint8 val, uint32 len);
 
-/* Converting integer to string */
+/* Converting integer to ascii */
 void int_to_ascii(int n, char str[]);
+
+/* Converting integer to string */
+string intToString(int n);
+
+/* Converting string to integer */
+int stringToInt(string ch);
+
+/* Memory allocation function */
+void * malloc(int bytes);
 
 #endif
