@@ -57,7 +57,19 @@ string intToString(int n)
 	return ch;
 }
 
-
+int stringToInt(string ch)
+{
+	int n = 0;
+	int p = 1;
+	int strlen = strlength(ch);
+	int i;
+	for (i = strlen-1;i>=0;i--)
+	{
+		n += ((int)(ch[i] - '0')) * p;
+		p *= 10;
+	}
+	return n;
+}
 
 void * malloc(int nbytes)
 {
