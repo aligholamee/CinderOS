@@ -1,4 +1,4 @@
-#include "../Headers/shell.h"
+#include "../headers/shell.h"
 
 void start_shell(int n)
 {
@@ -74,7 +74,7 @@ void fill_array(int arr[],int n)
 	}
 }
 
-/* Simply find the summation of the array elements :| */ 
+/* Simply find the summation of the array elements :| */
 int sum_array(int arr[],int n)
 {
 	int i = 0;
@@ -201,9 +201,9 @@ int gcd_couple(int a,int b)
 {
 	if(b == 0)
 		return 1;
-	if(a % b ==0) 
+	if(a % b ==0)
 		return b;
-	else 
+	else
 		return gcd_couple(b,a % b);
 }
 
@@ -228,7 +228,7 @@ void setBackgroundColor()
 	print("\n0 : black");
 
 	/* Following function is defined in screen.h */
-	print_colored("\n1 : blue",1,0);   
+	print_colored("\n1 : blue",1,0);
 	print_colored("\n2 : green",2,0);
 	print_colored("\n3 : cyan",3,0);
 	print_colored("\n4 : red",4,0);
@@ -243,7 +243,7 @@ void setBackgroundColor()
 	print_colored("\n13 : rose",13,0);
 	print_colored("\n14 : yellow",14,0);
 	print_colored("\n15 : white",15,0);
-	
+
 	print("\n\n Text color ? : ");
 	int text_color = stringToInt(readStr());
 	print("\n\n Background color ? : ");
@@ -265,7 +265,7 @@ void help()
 	print("\ngcd       : Computes the grand common divider of n given numbers");
 	print("\nexit      : Quits the current shell");
 	print("\ncolor     : Changes the colors of the terminal");
-	
+
 	print("\n\n");
 }
 

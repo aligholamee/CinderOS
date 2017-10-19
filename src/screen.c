@@ -1,11 +1,21 @@
-#include "../Headers/screen.h"
+/* Cinder OS
+# ========================================
+# [] File Name : screen.c
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
+#include "../headers/screen.h"
 
 int cursorX = 0, cursorY = 0;
 const uint8 sw = 80, sh = 25, sd = 2;							/* sw = screen width, height, depth, sd=2 => color,char */
 int color = 0x0F;
 void clearLine(uint8 line_s, uint8 line_e)						/* Delete lines from line_s to line_e */
 {
-	uint16 i = sw * line_s * sd;			
+	uint16 i = sw * line_s * sd;
 	string vidmem = (string)0xb8000;
 	for(i;i<(sw*(line_e+1)*sd);i++)
 	{
@@ -18,7 +28,7 @@ void updateCursor()
 {
 	unsigned temp;
 	temp = cursorY * sw + cursorX;							/* Position = (Y*Width) + X */
-	
+
 	outportb(0x3D4, 14);								/* CRT Control Register */
 	outportb(0x3D5, temp >> 8);							/* Send the high byte across the bus */
 	outportb(0x3D4, 15);								/* CRT Control Register */
@@ -56,7 +66,7 @@ void scrollUp(uint8 lineNumber)
 	}
 	updateCursor();
 }
-	
+
 
 void checkNewLine()
 {
@@ -105,7 +115,7 @@ void printChar(char c)
 	checkNewLine();
 	updateCursor();
 }
-	
+
 void print(string ch)									/* Print an string */
 {
 	uint16 i = 0;

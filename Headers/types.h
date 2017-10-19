@@ -1,3 +1,13 @@
+/* Cinder OS
+# ========================================
+# [] File Name : types.h
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
 #ifndef TYPES_H
 #define TYPES_H
 
@@ -19,6 +29,6 @@ typedef char* string;
 #define low_16(address) (uint16)((address) & 0xFFFF)
 
 /* Simply AND the higher 16 bits with the 0xFFFF Mask */
-#define high_16(address) (uint16)((address) >> 16) & 0xFFFF 
+#define high_16(address) (uint16)((address) >> 16) & 0xFFFF
 
 #endif

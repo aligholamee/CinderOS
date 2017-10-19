@@ -1,4 +1,14 @@
-#include "../Headers/string.h"
+/* Cinder OS
+# ========================================
+# [] File Name : string.c
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
+#include "../headers/string.h"
 
 uint16 strlength(string ch)
 {
@@ -12,7 +22,7 @@ uint8 strEql(string ch1,string ch2)
 	uint8 result = 1;
 	uint8 size = strlength(ch1);
 
-	if(size != strlength(ch2)) 
+	if(size != strlength(ch2))
 		result = 0;
 	else
 	{
@@ -26,4 +36,3 @@ uint8 strEql(string ch1,string ch2)
 	}
 	return result;
 }
-

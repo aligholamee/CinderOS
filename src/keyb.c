@@ -1,4 +1,14 @@
-#include "../Headers/keyb.h"
+/* Cinder OS
+# ========================================
+# [] File Name : keyb.c
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
+#include "../headers/keyb.h"
 
 string readStr()
 {
@@ -11,7 +21,7 @@ string readStr()
 	{
 		/* 0x64 Allows to check for the keyboard input */
 		/* Goes through switch only when the key is pressed (The result of the inportb(0x64) must be a NON-ZERO) */
-		if(inportb(0x64) & 0x1)	
+		if(inportb(0x64) & 0x1)
 		{
 			/* The address in which the key code is read from */
 			/* Each of the following codes is called SCAN CODE */
@@ -84,7 +94,7 @@ string readStr()
 		                buffstr[i] = 0;
 		                break;
 		        case 15:
-		                printChar('\t');         
+		                printChar('\t');
 		                buffstr[i] = '\t';
 		                i++;
 		                break;
@@ -248,52 +258,52 @@ string readStr()
 		                printChar('v');
 		                buffstr[i] = 'v';
 		                i++;
-		                break;                
+		                break;
 		        case 48:
 		                printChar('b');
 		                buffstr[i] = 'b';
 		                i++;
-		                break;               
+		                break;
 		        case 49:
 		                printChar('n');
 		                buffstr[i] = 'n';
 		                i++;
-		                break;                
+		                break;
 		        case 50:
 		                printChar('m');
 		                buffstr[i] = 'm';
 		                i++;
-		                break;               
+		                break;
 		        case 51:
 		                printChar(',');
 		                buffstr[i] = ',';
 		                i++;
-		                break;                
+		                break;
 		        case 52:
 		                printChar('.');
 		                buffstr[i] = '.';
 		                i++;
-		                break;            
+		                break;
 		        case 53:
 		                printChar('/');
 		                buffstr[i] = '/';
 		                i++;
-		                break;            
+		                break;
 		        case 54:
 		                printChar('.');
 		                buffstr[i] = '.';
 		                i++;
-		                break;            
+		                break;
 		        case 55:
 		                printChar('/');
 		                buffstr[i] = '/';
 		                i++;
-		                break;            
+		                break;
 		        case 56:
 		                printChar(' ');          			 /* Right shift */
 		                buffstr[i] = ' ';
 		                i++;
-		                break;           
+		                break;
 		        case 57:
 		                printChar(' ');
 		                buffstr[i] = ' ';

@@ -1,4 +1,14 @@
-#include "../Headers/util.h"
+/* Cinder OS
+# ========================================
+# [] File Name : util.c
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
+#include "../headers/util.h"
 
 void memory_copy(char *source, char *dest, int nbytes)
 {
@@ -13,7 +23,7 @@ void memory_copy(char *source, char *dest, int nbytes)
 void memory_set(uint8 *dest, uint8 val, uint32 len)
 {
 	uint8 *temp = (uint8 *)dest;
-	for ( ; len != 0; len--) 
+	for ( ; len != 0; len--)
 		*temp++ = val;
 }
 
@@ -23,7 +33,7 @@ void int_to_ascii(int n, char str[])
 	if((sign = n) < 0) n = -n;
 
 	i = 0;
-	do 
+	do
 	{
 		/* Take out each digit and calculate it's ascii */
 		str[i++] = n % 10 + '0';

@@ -1,3 +1,13 @@
+/* Cinder OS
+# ========================================
+# [] File Name : idt.h
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
 #ifndef IDT_H
 #define IDT_H
 
@@ -7,7 +17,7 @@
 
 /* Defines each element of the interrupt descriptor table (IDT) */
 /* The following struct is going to be produced 256 times */
-typedef struct 
+typedef struct
 {
 	uint16 low_offset;
 	uint16 sel;
@@ -16,7 +26,7 @@ typedef struct
 	uint16 high_offset;
 }__attribute__((packed)) idt_gate_t;
 
-typedef struct 
+typedef struct
 {
 	/* Limit/Size of the IDT array */
 	uint16 limit;
