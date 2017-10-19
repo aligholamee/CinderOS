@@ -1,5 +1,7 @@
 # CinderOS
-![alt tag](https://raw.githubusercontent.com/aligholamee/CinderOS/master/wallpapers/cinder.jpg)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/aligholamee/CinderOS/master/wallpapers/cinder.jpg">
+</p>
 
 ## How to run?!
 As simple as always(:D), just clone the project and do:
