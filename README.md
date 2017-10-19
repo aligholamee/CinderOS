@@ -1,5 +1,5 @@
 # CinderOS
-![alt tag](http://uupload.ir/files/4rck_cinderos_wallpaper.jpeg)
+![alt tag](https://raw.githubusercontent.com/aligholamee/CinderOS/master/wallpapers/cinder.jpg)
 
 ## How to run?!
 As simple as always(:D), just clone the project and do:
