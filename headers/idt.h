@@ -1,0 +1,45 @@
+/* Cinder OS
+# ========================================
+# [] File Name : idt.h
+#
+# [] Creation Date : December 2016
+#
+# [] Created By : Ali Gholami (aligholami7596@gmail.com)
+# ========================================
+*/
+
+#ifndef IDT_H
+#define IDT_H
+
+#include "types.h"
+
+#define KERNEL_CS 0x08
+
+/* Defines each element of the interrupt descriptor table (IDT) */
+/* The following struct is going to be produced 256 times */
+typedef struct
+{
+	uint16 low_offset;
+	uint16 sel;
+	uint8 always0;
+	uint8 flags;
+	uint16 high_offset;
+}__attribute__((packed)) idt_gate_t;
+
+typedef struct
+{
+	/* Limit/Size of the IDT array */
+	uint16 limit;
+	/* Address of the first element of the IDT array */
+	uint32 base;
+}__attribute__((packed)) idt_register_t;
+
+#define IDT_ENTRIES 256
+idt_gate_t idt[IDT_ENTRIES];
+idt_register_t idt_reg;
+
+/* Following functions are implemented in idt.c */
+void set_idt_gate(int n, uint32 handler);
+void set_idt();
+
+#endif
