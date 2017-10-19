@@ -15,5 +15,6 @@ Well, this is one of my best practices on the C programming language since I sta
 Please feel **free** to contribute.
 
 ## Credits
-![Ali Gholami](https://github.com/aligholamee)
-![iKnow Brain](https://www.youtube.com/user/iknowbrain)
+-![Ali Gholami](https://github.com/aligholamee)
+
+-![iKnow Brain](https://www.youtube.com/user/iknowbrain)
