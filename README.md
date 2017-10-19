@@ -1,6 +1,6 @@
 # CinderOS
 <p align="center">
-    <img src="https://raw.githubusercontent.com/aligholamee/CinderOS/master/wallpapers/cinder.jpg">
+    <img src="https://raw.githubusercontent.com/aligholamee/CinderOS/master/wallpapers/fixed_logo.jpg">
 </p>
 
 ## How to run?!
