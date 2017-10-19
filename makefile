@@ -9,24 +9,24 @@ EMUALATOR_FLAGS = -kernel
 
 
 OBJS = Objects/cinder.o Objects/cinderc.o Objects/idt.o Objects/isr.o Objects/screen.o Objects/string.o Objects/system.o Objects/util.o Objects/keyb.o Objects/shell.o
-OUTPUT = CinderOS/boot/kernel.bin
+OUTPUT = os/boot/kernel.bin
 
 run:all
 	$(EMUALATOR) $(EMUALATOR_FLAGS) $(OUTPUT)
 
 all:$(OBJS)
-	mkdir CinderOS/ -p
-	mkdir CinderOS/boot -p
+	mkdir os/ -p
+	mkdir os/boot -p
 	$(LINKER) $(LDFLAGS) -o $(OUTPUT) $(OBJS)
 
 Objects/cinder.o:src/kernel.asm
 	$(ASSEMBLER) $(ASFLAGS) -o Objects/cinder.o src/kernel.asm
 
 Objects/cinderc.o:src/kernel.c
-	$(COMPILER) $(CFLAGS) src/kernel.c -o Objects/cinderc.o 
-	
+	$(COMPILER) $(CFLAGS) src/kernel.c -o Objects/cinderc.o
+
 Objects/idt.o:src/idt.c
-	$(COMPILER) $(CFLAGS) src/idt.c -o Objects/idt.o 
+	$(COMPILER) $(CFLAGS) src/idt.c -o Objects/idt.o
 
 Objects/keyb.o:src/keyb.c
 	$(COMPILER) $(CFLAGS) src/keyb.c -o Objects/keyb.o
@@ -50,17 +50,17 @@ Objects/shell.o:src/shell.c
 	$(COMPILER) $(CFLAGS) src/shell.c -o Objects/shell.o
 
 build:all
-	rm CinderOS/boot/grub/ -r -f
-	mkdir CinderOS/boot/grub/
-	echo set default=0 >> CinderOS/boot/grub/grub.cfg
-	echo set timeout=0 >> CinderOS/boot/grub/grub.cfg
-	echo menuentry "CinderOS" { >> CinderOS/boot/grub/grub.cfg
-	echo         set root='(hd96)' >> CinderOS/boot/grub/grub.cfg
-	echo         multiboot /boot/kernel.bin >> CinderOS/boot/grub/grub.cfg
-	echo } >> CinderOS/boot/grub/grub.cfg
+	rm os/boot/grub/ -r -f
+	mkdir os/boot/grub/
+	echo set default=0 >> os/boot/grub/grub.cfg
+	echo set timeout=0 >> os/boot/grub/grub.cfg
+	echo menuentry "os" { >> os/boot/grub/grub.cfg
+	echo         set root='(hd96)' >> os/boot/grub/grub.cfg
+	echo         multiboot /boot/kernel.bin >> os/boot/grub/grub.cfg
+	echo } >> os/boot/grub/grub.cfg
 
-	grub-mkrescue -o CinderOS.iso CinderOS/
+	grub-mkrescue -o os.iso os/
 
 clear:
 	rm -f Objects/*.o
-	rm -r -f CinderOS/
+	rm -r -f os/
